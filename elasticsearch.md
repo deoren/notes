@@ -65,11 +65,6 @@ Add index | `curl -XPUT http://localhost:9200/INDEX_NAME`
 Get all indices in a cluster | `curl -XGET http://localhost:9200/_cat/indices?v`
 Get a specific index in a cluster | `curl -XGET http://localhost:9200/INDEX_NAME`
 
-### Adding
-
-
-
-### Get all indices in a cluster
 
 ## References
 
