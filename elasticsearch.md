@@ -99,7 +99,16 @@ another field (e.g., `type`).
 
 ## Clustering
 
-- stub section
+### High availability & fault tolerance
+
+- Dedicated masters is a must
+    - `discovery.zen.minimum_master_nodes` = N/2 + 1
+       (e.g., 50% + 1, so for 5 master eligible nodes, set 3)
+
+- Keep incides balanced
+    - review the `total_shards_per_node` option
+    - size-based indices vs time-based indices, otherwise hotspots
+      will be an issue.
 
 ## Queries
 
