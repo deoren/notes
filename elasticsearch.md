@@ -101,9 +101,15 @@ another field (e.g., `type`).
 
 ### High availability & fault tolerance
 
-- Dedicated masters is a must
-    - `discovery.zen.minimum_master_nodes` = N/2 + 1
-       (e.g., 50% + 1, so for 5 master eligible nodes, set 3)
+- masters
+    - Dedicated masters is a must
+        - `discovery.zen.minimum_master_nodes` = N/2 + 1
+           (e.g., 50% + 1, so for 5 master eligible nodes, set 3)
+        - memory heavy (mappings, etc)
+    - single-threaded
+    - a few cores dedicated to garbage collecting
+    - disk space isn't as much of a concern because
+      data is not stored locally
 
 - Keep incides balanced
     - review the `total_shards_per_node` option
