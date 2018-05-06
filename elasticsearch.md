@@ -109,6 +109,10 @@ another field (e.g., `type`).
     - review the `total_shards_per_node` option
     - size-based indices vs time-based indices, otherwise hotspots
       will be an issue.
+      
+- A larger number of smaller nodes with a smaller Java heap may handle
+  spikes better than a few larger nodes
+    - TODO: Research this further
 
 ## Queries
 
