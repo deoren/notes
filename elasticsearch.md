@@ -139,6 +139,20 @@ Add index | `curl -XPUT http://localhost:9200/INDEX_NAME`
 Get all indices in a cluster | `curl -XGET http://localhost:9200/_cat/indices?v`
 Get a specific index in a cluster | `curl -XGET http://localhost:9200/INDEX_NAME`
 
+## Performance
+
+### Merge policy
+
+- Relaxing the merge policy
+    - slower searches, but more spare CPU
+    - more open files (need to have Nagios monitor this)
+
+Settings to tune:
+
+- `index.merge.policy.segments_per_tier`
+- `max_merge_at_once`
+- `max_merged_segment`
+
 
 ## References
 
