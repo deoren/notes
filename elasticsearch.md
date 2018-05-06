@@ -179,3 +179,5 @@ Settings to tune:
     - https://www.elastic.co/blog/index-type-parent-child-join-now-future-in-elasticsearch
     - https://www.elastic.co/blog/a-practical-introduction-to-elasticsearch
     - https://github.com/elastic/elasticsearch/issues/20257
+
+- [VIDEO 10 OF 65 FROM VELOCITY 2016 - AMSTERDAM, THE NETHERLANDS](https://www.safaribooksonline.com/library/view/velocity-2016-/9781491958537/video290643.html)
