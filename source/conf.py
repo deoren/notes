@@ -43,8 +43,7 @@ release = version + ' dev build'
 extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
-    'sphinx.ext.ifconfig',
-    'edit_on_github'
+    'sphinx.ext.ifconfig'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -81,7 +80,7 @@ pygments_style = 'sphinx'
 # This will be included at the beginning of every source file that is read.
 rst_prolog = """
 
-.. include:: /includes/substitution_definitions.inc.rst
+.. include:: /_includes/substitution_definitions.inc.rst
 
 """
 
@@ -89,7 +88,7 @@ rst_prolog = """
 # This will be included at the end of every source file that is read.
 rst_epilog = """
 
-.. include:: /includes/footer.inc.rst
+.. include:: /_includes/footer.inc.rst
 
 """
 
