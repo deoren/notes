@@ -91,6 +91,12 @@ rst_epilog = """
 
 """
 
+# Warn about all references where the target cannot be found. Default is False.
+nitpicky = True
+
+# Supress "unknown mimetype for ..." warnings
+suppress_warnings = ['epub.unknown_project_files']
+
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -211,3 +217,7 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+# If this is True, todo emits a warning for each TODO entry. The default
+# is False.
+todo_emit_warnings = True
