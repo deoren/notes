@@ -1,10 +1,13 @@
 .. Notes documentation master file, created by
    sphinx-quickstart on Sun May 13 14:23:38 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
-Welcome to Notes's documentation!
+Welcome to deoren's scratch notes
 =================================
+
+This is a collection of various notes for topics I'm exploring.
+
+Please `open an issue <https://github.com/deoren/notes/issues/new>`_ for
+anything you spot obviously wrong or missing proper attribution. Thanks!
 
 .. toctree::
    :maxdepth: 2
@@ -18,3 +21,6 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+This document was generated on |today|.
