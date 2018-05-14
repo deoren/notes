@@ -1,8 +1,9 @@
 .. Notes documentation master file, created by
    sphinx-quickstart on Sun May 13 14:23:38 2018.
 
+*********************************
 Welcome to deoren's scratch notes
-=================================
+*********************************
 
 This is a collection of various notes for topics I'm exploring.
 
@@ -13,14 +14,11 @@ anything you spot obviously wrong or missing proper attribution. Thanks!
    :maxdepth: 2
    :caption: Contents:
 
+   asunder
+   docbook
+   graylog
+   json
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
 
 This document was generated on |today|.
