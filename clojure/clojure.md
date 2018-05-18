@@ -18,3 +18,25 @@ This is something that functional programming tries to avoid with varying degree
 of success. If you can avoid using `do`, you probably should. Your code could 
 probably be better represented by a pipeline of values into values, but for things
 like logging, this is considered a perfectly reasonable thing to do.
+
+## `when-not`
+
+Tends to be a one-branch `if`; wraps everything in an implicit `do` which makes an
+explicit `do` unnecessary.
+
+## keywords
+
+> Keywords can be used as functions that look up the corresponding value in
+> a data structure. For example, you can look up :a in a map:
+>
+```clojure
+(:a {:a 1 :b 2 :c 3})
+; => 1
+```
+>
+> This is equivalent to:
+>
+```clojure
+(get {:a 1 :b 2 :c 3} :a)
+; => 1
+```
