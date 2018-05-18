@@ -53,4 +53,7 @@
     (println "Ok")
     :ok))
 
-
+; Not 100% sure what I'm seeing here. Is the ':ok' keyword being used to
+; lookup a result?
+when (not (empty? x)) :ok)
+(when (empty? x) :ok)
