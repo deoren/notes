@@ -40,3 +40,7 @@ explicit `do` unnecessary.
 (get {:a 1 :b 2 :c 3} :a)
 ; => 1
 ```
+
+## hash maps, array maps
+
+- Auto conversion between the two based on size?
