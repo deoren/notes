@@ -48,3 +48,17 @@ explicit `do` unnecessary.
 ## functions
 
 - Every function (as in most Funtional Programming languages) returns a value
+
+## commas
+
+Commas are treated as whitespace in Clojure.
+
+The following functions are equivalent:
+
+```clojure
+(defn hello [name, title] (str "Hello, " title " " name))
+```
+
+```clojure
+(defn hello [name title] (str "Hello, " title " " name))
+```
