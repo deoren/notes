@@ -44,3 +44,7 @@ explicit `do` unnecessary.
 ## hash maps, array maps
 
 - Auto conversion between the two based on size?
+
+## functions
+
+- Every function (as in most Funtional Programming languages) returns a value
