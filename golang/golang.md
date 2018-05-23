@@ -1,5 +1,15 @@
 # Go - Misc notes
 
+## Variable names
+
+- Go encourages not predeclaring variables, instead, declaring them within
+  the smallest scope possible
+- Because you're declaring variables within a small scope, you can use
+  short variable names without a lot of context. This is a core idiom
+  in Go.
+- The farther away a variable is being declared from where it's being
+  used, the longer the name has to be (guideline).
+
 ## Scope
 
 ### Example: What you might expect
