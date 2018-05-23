@@ -66,6 +66,11 @@ func main() {
 }
 ```
 
+## if/else
+
+- `else` is discouraged
+    - need to research this further
+
 ## References
 
 - Ultimate Go Programming
