@@ -9,6 +9,12 @@
   in Go.
 - The farther away a variable is being declared from where it's being
   used, the longer the name has to be (guideline).
+  
+- The "blank" identifier
+    - Allows you to use `_` in place of where you ordinarily are required
+      to supply a variable.
+    - Useful to indicate that you do not care about a return value from
+      a function.
 
 ## Scope
 
