@@ -70,6 +70,8 @@ func main() {
 
 - `else` is discouraged
     - need to research this further
+    - UGP seems to indicate that the main code flow is your "happy path" (everything
+      is working as intended), while an `if` statement is for handling error conditions
 
 ## References
 
