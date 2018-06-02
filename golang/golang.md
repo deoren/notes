@@ -74,9 +74,33 @@ func main() {
       is working as intended), while an `if` statement is for handling error conditions
     - `else` is said to not help readability, "pushes code down"
 
+## Strings
+
+### Quoting: Backticks & literal strings
+
+Backticks cause a string to be treated literally without regard for escaped characters
+within. For example, a string declared like this will not have the `\n` character
+sequence treated as an embedded newline when printed:
+
+```golang
+package main
+
+import (
+    "fmt"
+)
+
+fun main() {
+    atoz := `the quick brown fox jumps over the lazy dog\n`
+    
+    fmt.Printf("%s\n", atoz)
+}
+```
+
 ## References
 
 - Ultimate Go Programming
     - https://www.safaribooksonline.com/videos/ultimate-go-programming/9780134757476/
     - http://www.informit.com/store/ultimate-go-programming-livelessons-9780134757483
 
+- Learning Path: Go Fundamentals
+    - https://www.safaribooksonline.com/videos/learning-path-go/9781491958100/
