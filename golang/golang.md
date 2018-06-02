@@ -9,7 +9,7 @@
   in Go.
 - The farther away a variable is being declared from where it's being
   used, the longer the name has to be (guideline).
-  
+
 - The "blank" identifier
     - Allows you to use `_` in place of where you ordinarily are required
       to supply a variable.
@@ -42,8 +42,8 @@ From Ultimate Go Programming:
 
 > You might see a combination if statement calling a function and then
 > checking, let's say, an error, and moving on. But this is something that's
-> really unique in Go. Something that I think is incredibly powerful. Your if 
-> statement, your for statement, your switch statement. These statements, they 
+> really unique in Go. Something that I think is incredibly powerful. Your if
+> statement, your for statement, your switch statement. These statements, they
 > actually come with their own block of scope, something that we don't have in
 > other languages.
 
@@ -103,7 +103,7 @@ import (
 
 func main() {
     atoz := `the quick brown fox jumps over the lazy dog\n`
-    
+
     fmt.Printf("%s\n", atoz)
 }
 ```
