@@ -78,6 +78,8 @@ func main() {
 
 - Unlike in C/C++, `case` statements in Go do not "fall through" to the next.
   Instead, `case` statements act a lot like `if`/`else` statements.
+- You can use the `fallthrough` statement to force the familiar behavior from
+  other C-like languages.
 
 ## Strings
 
