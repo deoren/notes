@@ -74,6 +74,11 @@ func main() {
       is working as intended), while an `if` statement is for handling error conditions
     - `else` is said to not help readability, "pushes code down"
 
+## switch
+
+- Unlike in C/C++, `case` statements in Go do not "fall through" to the next.
+  Instead, `case` statements act a lot like `if`/`else` statements.
+
 ## Strings
 
 ### Quoting: Backticks & literal strings
