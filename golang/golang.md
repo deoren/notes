@@ -89,12 +89,14 @@ import (
     "fmt"
 )
 
-fun main() {
+func main() {
     atoz := `the quick brown fox jumps over the lazy dog\n`
     
     fmt.Printf("%s\n", atoz)
 }
 ```
+
+The example of where this feature is particularly useful is when working with JSON.
 
 ## References
 
