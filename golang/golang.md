@@ -81,6 +81,11 @@ func main() {
 - You can use the `fallthrough` statement to force the familiar behavior from
   other C-like languages.
 
+## Looping
+
+Unlike languages with `for`, `do`, `while`, `repeat` etc. Go only has `for`
+but it does the job of all the other loop types.
+
 ## Strings
 
 ### Quoting: Backticks & literal strings
