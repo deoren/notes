@@ -2,11 +2,15 @@
 
 ## Variables
 
+### Declaring
+
 - Go encourages not predeclaring variables, instead, declaring them within
   the smallest scope possible
+
 - Because you're declaring variables within a small scope, you can use
   short variable names without a lot of context. This is a core idiom
   in Go.
+
 - The farther away a variable is being declared from where it's being
   used, the longer the name has to be (guideline).
 
@@ -15,10 +19,12 @@
       to supply a variable.
     - Useful to indicate that you do not care about a return value from
       a function.
-- `name ...type` represents a variadic parameter named "name" of a
-  specific type. This allows an arbitrary number of arguments to be
-  passed to a function of that type. Only one variadic parameter is
-  allow per function.
+
+
+### Arrays
+
+It is quite rate to use arrays directly in Go. Instead, slices are the
+preferred approach.
 
 ## Scope
 
@@ -113,6 +119,16 @@ func main() {
 ```
 
 The example of where this feature is particularly useful is when working with JSON.
+
+## Functions
+
+- `name ...type` represents a variadic parameter named "name" of a
+  specific type. This allows an arbitrary number of arguments to be
+  passed to a function of that type. Only one variadic parameter is
+  allow per function.
+
+- Arguments by default are passed by value. You can override this by using
+  pointer arguments.
 
 ## References
 
