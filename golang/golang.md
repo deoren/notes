@@ -1,6 +1,6 @@
 # Go - Misc notes
 
-## Variable names
+## Variables
 
 - Go encourages not predeclaring variables, instead, declaring them within
   the smallest scope possible
@@ -15,6 +15,10 @@
       to supply a variable.
     - Useful to indicate that you do not care about a return value from
       a function.
+- `name ...type` represents a variadic parameter named "name" of a
+  specific type. This allows an arbitrary number of arguments to be
+  passed to a function of that type. Only one variadic parameter is
+  allow per function.
 
 ## Scope
 
