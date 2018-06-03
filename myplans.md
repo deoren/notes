@@ -26,6 +26,11 @@ tasks and goals*
     - Nexus 7 tablet is continually full, not a 1:1 replacement
     - New tablet needs to be equivalent in size, but faster, reliable still
       support SD cards
+- Upgrade virtual servers
+- Replace primary web server
+- Retire Projects site, use GitHub (and potentially other hosting services)
+  for public content
+
 
 ## Far
 
