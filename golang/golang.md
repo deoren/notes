@@ -26,6 +26,11 @@
 It is quite rate to use arrays directly in Go. Instead, slices are the
 preferred approach.
 
+### Maps
+
+- If you access an element of a `map` that does not exist you get the zero type
+  for what the `map` "maps" to. For example, the zero type of an `int` is 0.
+
 ## Scope
 
 ### Example: What you might expect
