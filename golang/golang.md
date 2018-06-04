@@ -31,6 +31,11 @@ preferred approach.
 - If you access an element of a `map` that does not exist you get the zero type
   for what the `map` "maps" to. For example, the zero type of an `int` is 0.
 
+- If you need to check whether something is in a map you can use the
+  "comma, ok" idom to find out. This works by setting "ok" to the
+  default boolean value of false and relying on an operation to set
+  the value to true.
+
 ## Scope
 
 ### Example: What you might expect
@@ -143,3 +148,8 @@ The example of where this feature is particularly useful is when working with JS
 
 - Learning Path: Go Fundamentals
     - https://www.safaribooksonline.com/videos/learning-path-go/9781491958100/
+
+- "comma, ok" idiom
+    - https://stackoverflow.com/a/24493004
+    - https://stackoverflow.com/a/30135334
+    - https://golang.org/doc/effective_go.html#interface_conversions
