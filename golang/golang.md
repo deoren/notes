@@ -36,6 +36,8 @@ preferred approach.
   default boolean value of false and relying on an operation to set
   the value to true.
 
+- maps can map from pretty much any type where equality is defined
+
 ## Scope
 
 ### Example: What you might expect
