@@ -13,6 +13,19 @@ The steps notes below will walk you through enabling the official upstream repo 
 1. `sudo apt-get install -y docker-ce`
 1. `sudo docker run hello-world`
 
+## Allowing non-root user (sans sudo) `docker` command execution
+
+The guide clearly notes that this change is for the user's convenience
+and should only be done for users who otherwise already have unlimited `sudo`
+access.
+
+Note: The upstream Ubuntu repo packages already create the `docker` group.
+
+1. `sudo groupadd docker`
+1. `sudo usermod --append --groups docker USERNAME_HERE`
+1. `newgrp docker`
+1. `docker run hellow-world`
+
 ## Building Docker image
 
 ### Overview
@@ -31,3 +44,7 @@ The steps notes below will walk you through enabling the official upstream repo 
 
 1. `mkdir -p output`
 1. `sudo docker run -ti -v $PWD/output:/output progit2-build:0.1`
+
+## References
+
+- https://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo/477554#477554
