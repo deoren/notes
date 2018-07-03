@@ -29,3 +29,5 @@ Various plugins that I use or plan on testing/using in the future.
 - Terraform
 - Ruby
 - REST Client
+- HAProxy
+- Ansible
