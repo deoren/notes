@@ -146,6 +146,114 @@ logger name:
     # ...
 ```
 
+#### util.get_logger() function
+
+
+In addition to the Transport() class shown above, several other classes also
+reference the util.get_logger() function shown here:
+
+```python
+# make only one filter object, so it doesn't get applied more than once
+class PFilter(object):
+
+    def filter(self, record):
+        record._threadid = get_thread_id()
+        return True
+
+
+_pfilter = PFilter()
+
+
+def get_logger(name):
+    l = logging.getLogger(name)
+    l.addFilter(_pfilter)
+    return l
+```
+
+This function is used as shown in the Transport() class and also as shown in
+these (incomplete) misc snippets from other modules:
+
+```python
+class BaseSFTP(object):
+
+    def __init__(self):
+        self.logger = util.get_logger("paramiko.sftp")
+        self.sock = None
+        self.ultra_debug = False
+```
+
+```python
+class SFTPServer(BaseSFTP, SubsystemHandler):
+    """
+    Server-side SFTP subsystem support.  Since this is a `.SubsystemHandler`,
+    it can be (and is meant to be) set as the handler for ``"sftp"`` requests.
+    Use `.Transport.set_subsystem_handler` to activate this class.
+    """
+
+    def __init__(
+        self,
+        channel,
+        name,
+        server,
+        sftp_si=SFTPServerInterface,
+        *largs,
+        **kwargs
+    ):
+
+        BaseSFTP.__init__(self)
+        SubsystemHandler.__init__(self, channel, name, server)
+        transport = channel.get_transport()
+        self.logger = util.get_logger(transport.get_log_channel() + ".sftp")
+```
+
+```python
+class SFTPClient(BaseSFTP, ClosingContextManager):
+    def __init__(self, sock):
+
+        BaseSFTP.__init__(self)
+
+        if type(sock) is Channel:
+            # override default logger
+            transport = self.sock.get_transport()
+            self.logger = util.get_logger(
+                transport.get_log_channel() + ".sftp"
+            )
+```
+
+```python
+class HostKeyEntry:
+    """
+    Representation of a line in an OpenSSH-style "known hosts" file.
+    """
+
+    def __init__(self, hostnames=None, key=None):
+        self.valid = (hostnames is not None) and (key is not None)
+        self.hostnames = hostnames
+        self.key = key
+
+    @classmethod
+    def from_line(cls, line, lineno=None):
+        """
+        Parses the given line of text to find the names for the host,
+        the type of key, and the key data. The line is expected to be in the
+        format used by the OpenSSH known_hosts file.
+
+        Lines are expected to not have leading or trailing whitespace.
+        We don't bother to check for comments or empty lines.  All of
+        that should be taken care of before sending the line to us.
+
+        :param str line: a line from an OpenSSH known_hosts file
+        """
+        log = get_logger("paramiko.hostkeys")
+```
+
+```python
+class Channel(ClosingContextManager):
+
+    def __init__(self, chanid):
+
+        self.logger = util.get_logger("paramiko.transport")
+```
 
 ## References
 
