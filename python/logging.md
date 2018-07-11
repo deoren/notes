@@ -40,7 +40,6 @@ customizations to the dev/user), but I suspect that the function is
 intended for internal use within the Paramiko project itself and would not
 be greatly enhanced by exposing the knobs via a config file.
 
-
 ### SSHClient() class
 
 Here the log "channel" override is left blank:
@@ -89,7 +88,6 @@ It helpfully notes that the default is `paramiko.transport` unless overridden.
 
 As I undestand it, this is a child logger for `paramiko`, which is itself a
 child logger under the `root` logger.
-
 
 ### Transport() class
 
@@ -145,7 +143,6 @@ logger name:
 ```
 
 ### util.get_logger() function
-
 
 In addition to the Transport() class shown above, several other classes also
 reference the util.get_logger() function shown here:
@@ -255,9 +252,7 @@ class Channel(ClosingContextManager):
 
 ## References
 
-
 - https://docs.python.org/3.4/library/logging.html
 - https://github.com/paramiko/paramiko
 
 - https://github.com/deoren/notes
-
