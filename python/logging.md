@@ -1,10 +1,8 @@
 # Python: Logging
 
-## Observations
+## Paramiko module
 
-### Paramiko module
-
-#### log_to_file() function
+### log_to_file() function
 
 Paramiko defines a function within `util.py` to handle all required steps to
 log directly to a log file using the standard library `logging` module:
@@ -43,7 +41,7 @@ intended for internal use within the Paramiko project itself and would not
 be greatly enhanced by exposing the knobs via a config file.
 
 
-#### SSHClient() class
+### SSHClient() class
 
 Here the log "channel" override is left blank:
 
@@ -93,7 +91,7 @@ As I undestand it, this is a child logger for `paramiko`, which is itself a
 child logger under the `root` logger.
 
 
-#### Transport() class
+### Transport() class
 
 Apparently this is where the child logger name is specified:
 
@@ -146,7 +144,7 @@ logger name:
     # ...
 ```
 
-#### util.get_logger() function
+### util.get_logger() function
 
 
 In addition to the Transport() class shown above, several other classes also
