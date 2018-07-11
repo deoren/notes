@@ -1,5 +1,13 @@
 # Python: Logging
 
+- [Python: Logging](#python-logging)
+    - [Paramiko module](#paramiko-module)
+        - [log_to_file() function](#logtofile-function)
+        - [SSHClient() class](#sshclient-class)
+        - [Transport() class](#transport-class)
+        - [util.get_logger() function](#utilgetlogger-function)
+    - [References](#references)
+
 ## Paramiko module
 
 ### log_to_file() function
