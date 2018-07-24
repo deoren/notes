@@ -31,3 +31,12 @@ Various plugins that I use or plan on testing/using in the future.
 - REST Client
 - HAProxy
 - Ansible
+
+### Installation
+
+1. `code --list-extensions`
+1. `code --install-extension EXTENSION_ID`
+
+## References
+
+- https://code.visualstudio.com/docs/editor/extension-gallery
