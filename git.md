@@ -7,6 +7,13 @@
   - One line log summary
   - graph showing branch merges/activity
 
+- `git log --graph --abbrev-commit --decorate --date=relative --all`
+  - lists a graph alongside the normal/detailed log output
+  - TODO: List what the other options do
+
+- `git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all`
+  - TODO: Add description
+
 ## Display configured remote
 
 - `git branch -vv`
