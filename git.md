@@ -83,9 +83,37 @@ git filter-branch -f --env-filter "
   " HEAD
 ```
 
+## Configure cached credentials via `.netrc` (e.g., for automated builds)
+
+This approach is useful if you want to setup a build system that requires
+read-only access to a restricted repo. Instead of hard-coding your main
+set of credentials (which are likely protected by 2FA), you can often
+request an API key via the web UI for select repo operations.
+
+1. Create `$HOME/.netrc`
+1. Enter `machine`, `login` and `password` details
+1. Test!
+
+Example contents:
+
+```bash
+machine example.visualstudio.com
+login bob
+password afg87afg8a7fga8sfg78afga8fgafs8dgsdfagxgcxcfgfrg87as
+```
+
+`git clone` operations should work as expected without prompting for
+credentials.
+
 ## References
 
 - <https://stackoverflow.com/questions/4847101/git-which-is-the-default-configured-remote-for-branch>
 - <https://stackoverflow.com/questions/9110310/update-git-commit-author-date-when-amending>
 - <https://stackoverflow.com/questions/750172/how-to-change-the-author-and-committer-name-and-e-mail-of-multiple-commits-in-gi>
 - <https://dev.to/drews256/i-love-git-log-off>
+
+- <https://stackoverflow.com/questions/5343068/is-there-a-way-to-skip-password-typing-when-using-https-on-github>
+- <https://confluence.atlassian.com/bitbucketserver/permanently-authenticating-with-git-repositories-776639846.html>
+- <https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/>
+- <https://gist.github.com/technoweenie/1072829>
+- <https://gist.github.com/sahilsk/ce21c39a6c2dbc2cd984>
