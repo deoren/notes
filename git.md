@@ -1,5 +1,19 @@
 # Git - misc notes/tips
 
+## Display changes
+
+### Diff for specific commit
+
+- `git diff COMMIT~ COMMIT`
+- `git show COMMIT`
+  - `git log -p c -1` seems to do the same thing
+- `git diff COMMIT^!`
+- `git diff-tree -p COMMIT`
+
+### Diff for last commit
+
+- `git show HEAD~1`
+
 ## Log display options
 
 - `git log --all --decorate --oneline --graph`
@@ -117,3 +131,6 @@ credentials.
 - <https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/>
 - <https://gist.github.com/technoweenie/1072829>
 - <https://gist.github.com/sahilsk/ce21c39a6c2dbc2cd984>
+
+- <https://stackoverflow.com/questions/4082126/git-log-of-a-single-revision>
+- <https://stackoverflow.com/questions/17563726/how-to-see-the-changes-in-a-git-commit>
