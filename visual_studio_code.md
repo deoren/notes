@@ -15,6 +15,7 @@ Various plugins that I use or plan on testing/using in the future.
 - Docker
 - C/C++
 - systemd-unit-file
+- unicode-Substitutions
 
 ### Review
 
@@ -39,4 +40,5 @@ Various plugins that I use or plan on testing/using in the future.
 
 ## References
 
-- https://code.visualstudio.com/docs/editor/extension-gallery
+- <https://code.visualstudio.com/docs/editor/extension-gallery>
+- <https://marketplace.visualstudio.com/items?itemName=GlenBuktenica.unicode-substitutions>
