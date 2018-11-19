@@ -35,7 +35,11 @@ member [bcoca](https://github.com/bcoca) and the official docs*
     - conditionals supported
     - included tasks DO NOT show when using the `-list` options.
     - Since Ansible 2.7
-      - *placeholder*
+      - a new module argument named `public` was added to the `include_role`
+        module that dictates whether or not the role's `defaults` and `vars`
+        will be exposed outside of the role, allowing those variables to be used
+        by later tasks. This value defaults to `public: False`, matching current
+        behavior.
 
 > You can get mostly what `include` (deprecated) did with `include_` by adding
 `tags: ['always']` to ensure the `include_` executes by default no matter what
@@ -85,6 +89,7 @@ See <https://github.com/deoren/ansible-examples/commits/i34196>
 - <https://docs.ansible.com/ansible/latest/modules/import_tasks_module.html>
 
 - <https://docs.ansible.com/ansible/latest/porting_guides/porting_guide_2.5.html#dynamic-includes-and-attribute-inheritance>
+- <https://docs.ansible.com/ansible/latest/porting_guides/porting_guide_2.7.html#include-role-and-import-role-variable-exposure>
 
 ### Official GitHub issues
 
