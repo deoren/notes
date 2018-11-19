@@ -11,11 +11,31 @@ member [bcoca](https://github.com/bcoca) and the official docs*
   - any keywords are inherited by contained tasks.
   - This will have the behaviour of ignoring tags on itself and NOT condition
     execution based on them.
+  - "static"
+    - templating not needed
+    - loops not needed
+    - conditionals not needed
+    - included tasks show when using the `-list` options.
+    - Handlers are made available to the whole play.
+    - Since Ansible 2.7
+      - variables defined in vars and defaults for the role are exposed at
+        playbook parsing time.
+      - variables will be accessible to roles and tasks executed before the
+        location of the import_role task.
+      - unlike `include_role`, variable exposure is not configurable, and will
+        always be exposed.
 
 - `include_`
+  - "dynamic"
   - keywords apply to it
   - keywords are NOT inherited by contained tasks
-  - This will NOT ignore tags and WILL condition it's execution based on them
+  - this will NOT ignore tags and WILL condition it's execution based on them
+    - templating applied
+    - loops supported
+    - conditionals supported
+    - included tasks DO NOT show when using the `-list` options.
+    - Since Ansible 2.7
+      - *placeholder*
 
 > You can get mostly what `include` (deprecated) did with `include_` by adding
 `tags: ['always']` to ensure the `include_` executes by default no matter what
