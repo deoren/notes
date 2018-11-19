@@ -40,6 +40,8 @@ member [bcoca](https://github.com/bcoca) and the official docs*
         will be exposed outside of the role, allowing those variables to be used
         by later tasks. This value defaults to `public: False`, matching current
         behavior.
+    - `apply` task argument that allows included tasks to inherit explicitly
+      provided attributes
 
 > You can get mostly what `include` (deprecated) did with `include_` by adding
 `tags: ['always']` to ensure the `include_` executes by default no matter what
@@ -105,4 +107,4 @@ These are potentially relevant:
 - <https://github.com/ansible/ansible/issues/38262#issuecomment-378754161>
 - <https://github.com/ansible/ansible/issues/32015>
 - <https://github.com/ansible/ansible/issues/35459>
-
+- <https://github.com/ansible/ansible/pull/39236>
