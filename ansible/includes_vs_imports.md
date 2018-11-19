@@ -23,6 +23,17 @@ tags you specify. There are other workarounds using `block` or just going back
 to `include` which we want to eventually remove but not until all cases are
 covered by the new actions
 
+Some snippets from the current
+[Tags](https://docs.ansible.com/ansible/latest/user_guide/playbooks_tags.html)
+documentation:
+
+- There is no way to 'import only these tags'; you probably want to split into
+  smaller roles/includes if you find yourself looking for such a feature.
+
+- To use tags with tasks and roles intended for dynamic inclusions, all needed
+  tasks should be explicitly tagged at the task level; or block: may be used to
+  tag more than one task at once. The include itself should also be tagged.
+
 ## Problem description
 
 As of Ansible 2.7.2 I found that when using a Playbook structure like the
@@ -31,8 +42,13 @@ a specific tag (with the intention to only execute tasks with that tag) like
 this:
 
 ```bash
-$ ansible-playbook mass-updates.yml -u sysadmin --tags report --limit "test1*"
+$ ansible-playbook mass-updates.yml -u sysadmin --tags report --limit "testing"
 ```
+
+The more I test this the more the suggested "fix" seems to be needed: make
+sure to tag the `include_` statment in addition to any tasks. If you use
+different tags, you will need to specify both the outer tag(s) for the
+`include_` statement in addition to whatever tasks you wish to execute.
 
 ## Example playbook and role snippets
 
