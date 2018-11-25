@@ -33,7 +33,7 @@ member [bcoca](https://github.com/bcoca) and the official docs*
     - templating applied
     - loops supported
     - conditionals supported
-    - included tasks DO NOT show when using the `-list` options.
+    - included tasks DO NOT show when using the `--list` options.
     - Since Ansible 2.7
       - a new module argument named `public` was added to the `include_role`
         module that dictates whether or not the role's `defaults` and `vars`
