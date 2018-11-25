@@ -16,6 +16,8 @@ either directly within the new installation or against a series of containers.*
     - ppa:ansible/ansible
 1. Add LXC PPA (16.04 needed, 18.04 NOT needed)
     - ppa:ubuntu-lxc/lxc-stable
+1. Add Golang PPA
+    - ppa:longsleep/golang-backports
 1. `sudo apt-get update`
 1. `sudo apt-get dist-upgrade`
 1. `sudo reboot`
@@ -34,3 +36,4 @@ so that one or more playbooks could be used for the rest of the work.
 - <https://launchpad.net/~git-core/+archive/ubuntu/ppa>
 - <https://launchpad.net/~ansible/+archive/ubuntu/ansible>
 - <https://launchpad.net/~ubuntu-lxc/+archive/ubuntu/lxc-stable>
+- <https://github.com/golang/go/wiki/Ubuntu>
