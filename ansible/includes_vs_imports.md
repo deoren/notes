@@ -58,8 +58,8 @@ documentation:
 
 - To use tags with tasks and roles intended for dynamic inclusions, all needed
   tasks should be explicitly tagged at the task level; or `block:` may be used
-  to tag more than one task at once. __**The include itself should also be
-  tagged.**__
+  to tag more than one task at once. _The include itself should **also** be
+  tagged._
 
 ## Problem description
 
