@@ -22,11 +22,12 @@ either directly within the new installation or against a series of containers.*
 1. `sudo apt-get dist-upgrade`
 1. `sudo reboot`
 1. Install common tools
-    - tmux
-    - git
-    - ansible
+    - `tmux`
+    - `git`
+    - `ansible`
     - lxc (likely does not work on WSL)
     - docker (likely also does not work on WSL)
+    - `golang-go`
 
 Future steps would use a shell script for bootstrapping and installing Ansible
 so that one or more playbooks could be used for the rest of the work.
