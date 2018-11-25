@@ -57,8 +57,9 @@ documentation:
   smaller roles/includes if you find yourself looking for such a feature.
 
 - To use tags with tasks and roles intended for dynamic inclusions, all needed
-  tasks should be explicitly tagged at the task level; or block: may be used to
-  tag more than one task at once. The include itself should also be tagged.
+  tasks should be explicitly tagged at the task level; or `block:` may be used
+  to tag more than one task at once. **The include itself should also be
+  tagged.**
 
 ## Problem description
 
