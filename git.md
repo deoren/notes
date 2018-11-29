@@ -1,5 +1,25 @@
 # Git - misc notes/tips
 
+## Tags
+
+### Show tags
+
+`git tag -l`
+
+### Show tag details
+
+`git show TAG_NAME`
+
+### Create an annotated tag
+
+1. `git log --oneline -n 5`
+   - *assuming that five lines is enough to spot the commit you want to tag,
+    which is usually a merge commit*
+1. `git tag -a v0.1.5 -m "Tagging v0.1.5" GIT_COMMIT_HERE`
+1. Push the tag(s)
+    - All tags: `git push origin --tags`
+    - Just the one: `git push origin TAG_NAME`
+
 ## Display changes
 
 ### Diff for specific commit
