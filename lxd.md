@@ -72,6 +72,11 @@ Output:
 
 `lxc delete centos-test`
 
+To play it safe, you probably should one of these commands instead for interactive confirmation:
+
+- `lxc delete --interactive centos-test`
+- `lxc delete -i centos-test`
+
 ## References
 
 - [How to create a LXD Container with your ssh key in it (and with ssh server in the container)](https://gist.github.com/jeanlouisferey/15be1f421eb9f9a66f1c74d410de2675)
