@@ -13,6 +13,15 @@
 Placeholder for snippets illustrating how to search for groups matching
 a very specific pattern and then add a specific user account to said groups.
 
+## Tips / Tricks
+
+### Create "checksum" file for each zip file
+
+This example is intended to be easily modified to handle other or additional
+file types.
+
+`ls *.zip | % {Get-FileHash $_ | Format-List | Out-File "$($_).checksum.txt" }`
+
 ## References
 
 - Active Directory
