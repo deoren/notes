@@ -1,5 +1,14 @@
 # Git - misc notes/tips
 
+## Branches
+
+### Rename branches
+
+1. `git branch --move old_branch new_branch`
+1. `git checkout new_branch`
+1. `git push --set-upstream origin new_branch`
+1. `git push origin --delete old_branch`
+
 ## Tags
 
 ### Show tags
