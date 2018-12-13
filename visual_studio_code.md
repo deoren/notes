@@ -1,5 +1,23 @@
 # Visual Studio Code
 
+## Search / Replace
+
+### Regular Expression
+
+```regex
+// Example string to match against
+"{{ passenger_standalone_service_account_name }}"
+
+// Search pattern
+passenger_standalone_([a-z_]+) }}
+
+// Replace pattern
+passenger_standalone['$1'] }}
+
+// Example result of search and replace
+"{{ passenger_standalone['service_account_name'] }}"
+```
+
 ## Plugins
 
 Various plugins that I use or plan on testing/using in the future.
