@@ -72,7 +72,23 @@ was given the hash/id of `62f030936d95`*
 1. `mkdir -p output`
 1. `sudo docker run -d -v $PWD/output:/output progit2-build:0.1`
 
+## Docker Compose
+
+### Join container to default bridge network
+
+From the example found on StackOverflow (see link below):
+
+```yaml
+version: "2.1"
+
+services:
+  app:
+    image: ubuntu:latest
+    network_mode: bridge
+```
+
 ## References
 
 - <https://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo/477554#477554>
 - <https://stackoverflow.com/questions/21928780/create-multiple-tag-docker-image>
+- <https://stackoverflow.com/questions/43754095/how-to-join-the-default-bridge-network-with-docker-compose-v2>
