@@ -60,6 +60,10 @@ was given the hash/id of `62f030936d95`*
 1. `$ docker tag 62f030936d95 squid:3.5.27`
 1. `$ docker tag 62f030936d95 squid:2019-01-11`
 
+### Bypassing the cache / Forcing a clean image build
+
+1. `docker build --no-cache -t TAG_NAME_HERE -f DOCKERFILE_HERE .`
+
 ## Running Docker image
 
 ### Interactive
@@ -92,3 +96,4 @@ services:
 - <https://askubuntu.com/questions/477551/how-can-i-use-docker-without-sudo/477554#477554>
 - <https://stackoverflow.com/questions/21928780/create-multiple-tag-docker-image>
 - <https://stackoverflow.com/questions/43754095/how-to-join-the-default-bridge-network-with-docker-compose-v2>
+- <https://stackoverflow.com/questions/35594987/how-to-force-docker-for-a-clean-build-of-an-image>
