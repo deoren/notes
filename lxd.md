@@ -11,15 +11,55 @@
 
 ### Network settings
 
-In short, run `sudo lxd init` and answer the prompts.
+In short, run `sudo lxd init` and answer *most* of the prompts. See the
+sections below for specifics.
+
+#### LXD 2.0
 
 When you run `sudo lxd init` you will be asked whether you wish to configure
-the LXD bridge. Answer Yes and a random subnet will be chosen. In my case
-10.245.28.1 was chosen as the IP with 255.255.255.0 as the mask. DHCP was
-enabled for container use.
+the LXD bridge.
+
+Answer **Yes** and a random subnet will be chosen. In my case 10.245.28.1 was
+chosen as the IP with 255.255.255.0 as the mask. DHCP was enabled for
+container use.
 
 The network bridge device was named `lxdbr0`. NAT for IPv4 was enabled, IPv6
 was disabled.
+
+#### LXD 2.5+
+
+*Most of the information here was pulled from the **LXD, ZFS and bridged
+networking on Ubuntu 16.04 LTS+** link in the Reference section*
+
+When you run `sudo lxd init` you will be asked whether you wish to configure
+the LXD bridge.
+
+Answer **No**, see the notes below.
+
+In version 2.5 and newer, the new `lxc network` command is used to configure
+networking.
+
+With `lxd init` complete, add the `br0` interface to the default profile
+with:
+
+`lxc network attach-profile br0 default eth0`
+
+If you receive this error:
+
+```ShellSession
+device already exists.
+```
+
+then your system has the `lxdbr0` interface attached to the default profile.
+This interface must first be removed from the default profile before the `br0`
+interface can be attached.
+
+Run the following command to detach the `lxdbr0` interface from the default
+profile:
+
+`lxc network detach-profile lxdbr0 default eth0`
+
+With that complete, LXD will now successfully use the pre-configured bridge.
 
 ## Show Image Servers
 
@@ -80,3 +120,5 @@ To play it safe, you probably should one of these commands instead for interacti
 ## References
 
 - [How to create a LXD Container with your ssh key in it (and with ssh server in the container)](https://gist.github.com/jeanlouisferey/15be1f421eb9f9a66f1c74d410de2675)
+
+- [LXD, ZFS and bridged networking on Ubuntu 16.04 LTS+](https://bayton.org/docs/linux/lxd/lxd-zfs-and-bridged-networking-on-ubuntu-16-04-lts/)
