@@ -76,6 +76,18 @@ was given the hash/id of `62f030936d95`*
 1. `mkdir -p output`
 1. `sudo docker run -d -v $PWD/output:/output progit2-build:0.1`
 
+## Pushing docker image to registry
+
+1. `docker login`
+1. `docker push USERNAME/repo`
+
+Example:
+
+`docker push deoren/squid`
+
+This will push all tags for the `squid` repo associated with the `deoren` user
+account to the configured remote registry.
+
 ## Docker Compose
 
 ### Join container to default bridge network
