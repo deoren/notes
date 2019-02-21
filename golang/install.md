@@ -15,15 +15,38 @@ the Golang build packages.
 1. Install new MSI
 1. Upgrade Visual Studio Code extension (if applicable)
 
-## Ubuntu
+## Linux
 
-### PPA
+### General
+
+1. Download latest tarball from <https://golang.org/doc/install> to `/tmp`
+1. `sudo tar -C /usr/local -xzf go1.11.5.linux-amd64.tar.gz`
+1. Update `$HOME/.profile` with settings shown below
+1. Logout
+1. Login
+
+Settings:
+
+```shell
+# Where Go projects live
+export GOPATH="$HOME/go"
+
+# Path of downloaded/extracted tarball from upstream
+export GOROOT="/usr/local/go"
+
+# https://golang.org/doc/install
+export PATH=$PATH:$GOROOT/bin
+```
+
+### Ubuntu
+
+#### PPA
 
 1. `sudo apt-repository-add ppa:longsleep/golang-backports`
 1. `sudo apt-get update`
 1. `sudo apt-get install golang-go`
 
-### Custom Deb package
+#### Custom Deb package
 
 1. `mkdir -p ~/.go/bin`
 1. `echo "GOPATH DEFAULT=\${HOME}/.go" >> ~/.pam_environment`
