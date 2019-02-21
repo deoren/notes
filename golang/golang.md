@@ -20,6 +20,17 @@
     - Useful to indicate that you do not care about a return value from
       a function.
 
+### Single vs Double quotes
+
+```golang
+const (
+  foo = "A"
+  bar = 'A' // When run on Go Playground, this is an int32 with the value of 65
+  bin = 2
+)
+```
+
+Not sure if this only applies to constants.
 
 ### Arrays
 
