@@ -35,7 +35,7 @@ export GOPATH="$HOME/go"
 export GOROOT="/usr/local/go"
 
 # https://golang.org/doc/install
-export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 ```
 
 ### Ubuntu
