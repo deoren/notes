@@ -29,6 +29,18 @@
     - All tags: `git push origin --tags`
     - Just the one: `git push origin TAG_NAME`
 
+### Delete tags
+
+#### Remote
+
+- `git push origin :TAG_NAME`
+- `git push -d TAG_NAME`
+- `git push --delete origin TAG_NAME`
+
+#### Local
+
+`git tag --delete TAG_NAME`
+
 ## Display changes
 
 ### Diff for specific commit
