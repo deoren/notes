@@ -1,5 +1,32 @@
 # Git - misc notes/tips
 
+- [Git - misc notes/tips](#git---misc-notestips)
+  - [Branches](#branches)
+    - [Rename branches](#rename-branches)
+  - [Tags](#tags)
+    - [Show tags](#show-tags)
+    - [Show tag details](#show-tag-details)
+    - [Create an annotated tag](#create-an-annotated-tag)
+    - [Delete tags](#delete-tags)
+      - [Remote](#remote)
+      - [Local](#local)
+  - [Display changes](#display-changes)
+    - [Diff for specific commit](#diff-for-specific-commit)
+    - [Diff for last commit](#diff-for-last-commit)
+  - [Log display options](#log-display-options)
+  - [Display configured remote](#display-configured-remote)
+  - [Change configured remote](#change-configured-remote)
+    - [one branch](#one-branch)
+    - [all branches](#all-branches)
+  - [Reset date](#reset-date)
+    - [Reset date of last commit](#reset-date-of-last-commit)
+    - [Reset date of specific commit](#reset-date-of-specific-commit)
+  - [Reset author/email](#reset-authoremail)
+    - [Reset author of last commit](#reset-author-of-last-commit)
+    - [Reset author on ALL commits](#reset-author-on-all-commits)
+  - [Configure cached credentials via `.netrc` (e.g., for automated builds)](#configure-cached-credentials-via-netrc-eg-for-automated-builds)
+  - [References](#references)
+
 ## Branches
 
 ### Rename branches
