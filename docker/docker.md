@@ -1,5 +1,25 @@
 # Docker notes
 
+- [Docker notes](#docker-notes)
+  - [Installation](#installation)
+    - [Setting up Ubuntu repo](#setting-up-ubuntu-repo)
+  - [Configuration](#configuration)
+    - [Allowing non-root user (sans sudo) `docker` command execution](#allowing-non-root-user-sans-sudo-docker-command-execution)
+  - [Building Docker image](#building-docker-image)
+    - [Overview](#overview)
+    - [Example](#example)
+    - [Specifying multiple tags](#specifying-multiple-tags)
+      - [At build time](#at-build-time)
+    - [After building an image](#after-building-an-image)
+    - [Bypassing the cache / Forcing a clean image build](#bypassing-the-cache--forcing-a-clean-image-build)
+  - [Running Docker image](#running-docker-image)
+    - [Interactive](#interactive)
+    - [Background / daemon / one-shot](#background--daemon--one-shot)
+  - [Pushing docker image to registry](#pushing-docker-image-to-registry)
+  - [Docker Compose](#docker-compose)
+    - [Join container to default bridge network](#join-container-to-default-bridge-network)
+  - [References](#references)
+
 ## Installation
 
 ### Setting up Ubuntu repo
