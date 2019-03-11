@@ -1,5 +1,21 @@
 # LXD
 
+- [LXD](#lxd)
+  - [Install packages](#install-packages)
+    - [Ubuntu 16.04](#ubuntu-1604)
+  - [Initial setup](#initial-setup)
+    - [Network settings](#network-settings)
+      - [LXD 2.0](#lxd-20)
+      - [LXD 2.5+](#lxd-25)
+  - [Show Image Servers](#show-image-servers)
+  - [Show filtered image list](#show-filtered-image-list)
+  - [Create container](#create-container)
+  - [Start container](#start-container)
+  - [Create AND Start container](#create-and-start-container)
+  - [Stop container](#stop-container)
+  - [Delete container](#delete-container)
+  - [References](#references)
+
 ## Install packages
 
 ### Ubuntu 16.04
