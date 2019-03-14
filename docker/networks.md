@@ -13,6 +13,8 @@
   - `docker network create -d bridge toll-bridge`
     - note: `-d bridge` is the default, so specifying it here as shown is not
       strictly required
+    - attach new container by specifying the `--network NAME` flag
+      - e.g., `docker container run --rm -d --network toll-bridge alpine`
 
 ## Bridge or "Single Host Networking"
 
