@@ -2,10 +2,17 @@
 
 ## Common commands
 
-- `docker network ls`
+- Show networks
+  - `docker network ls`
+
 - Inspect default bridge network (different name, different driver)
   - Linux: `docker network inspect bridge`
   - Windows: `docker network inspect nat`
+
+- Create new network
+  - `docker network create -d bridge toll-bridge`
+    - note: `-d bridge` is the default, so specifying it here as shown is not
+      strictly required
 
 ## Bridge or "Single Host Networking"
 
