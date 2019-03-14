@@ -3,9 +3,10 @@
 - Every service gets a name
 - Names are registered with Swarm DNS
 - Every service uses Swarm DNS
+- Every node in the Swarm gets the `ingress` network
 
 - Ports mapped to "host" are mapped on every Swarm node
-  - e.g., `docker service create -d --name web --network skynet --replicas 1 -p 8080:80`
+  - e.g., `docker service create -d --name web --network skynet --replicas 1 -p 8080:80 nginx`
     - this creates a mapping on every node from 8080 to the container running
       on port 80, regardless of which node the container is actually running
       on
