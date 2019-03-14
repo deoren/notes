@@ -20,7 +20,7 @@
 - Requires port-mappings
   - map port on the host to a port on a (specific) container
   - e.g., `docker container run --rm -d --name web -p 8080:80 nginx`
-    - port 8080 on host to port 80 in container
+    - port 8080 on *all interfaces* on the host to port 80 in this container
 
 ## Overlay or "Multi-host Networking"
 
