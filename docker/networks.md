@@ -9,13 +9,6 @@
   - Linux: `docker network inspect bridge`
   - Windows: `docker network inspect nat`
 
-- Create new network
-  - `docker network create -d bridge toll-bridge`
-    - note: `-d bridge` is the default, so specifying it here as shown is not
-      strictly required
-    - attach new container by specifying the `--network NAME` flag
-      - e.g., `docker container run --rm -d --network toll-bridge alpine`
-
 ## Bridge or "Single Host Networking"
 
 - known as `docker0`
@@ -26,14 +19,23 @@
   otherwise
 - "crappiest" per [Nigel Poulton](#references)
 - NAT
+- scoped to `local`
 - Requires port-mappings
   - map port on the host to a port on a (specific) container
   - e.g., `docker container run --rm -d --name web -p 8080:80 nginx`
     - port 8080 on *all interfaces* on the host to port 80 in this container
 
+- Create new `bridge` network
+  - `docker network create -d bridge NEW_BRIDGE_NAME`
+    - e.g., - `docker network create -d bridge toll-bridge`
+      - note: `-d bridge` is the default, so specifying it here as shown is not
+        strictly required
+    - attach new container by specifying the `--network NAME` flag
+      - e.g., `docker container run --rm -d --network toll-bridge alpine`
+
 ## Overlay or "Multi-host Networking"
 
-- requires (TODO: confirm this) Swarm mode to function
+- requires Swarm mode to function
 - single layer 2 network
 - span multiple hosts
 - IPs of specific backend Docker nodes are irrelevant
@@ -43,6 +45,15 @@
 - attach containers to newly created network
 - encrypted by way of `docker network create -o encrypted`
 - built-in Overlay Network is container-only
+- scoped to `swarm`
+
+- Create new `overlay` network
+  - `docker network create -d overlay NEW_BRIDGE_NAME`
+    - e.g., - `docker network create -d overlay skynet`
+      - note: `-d bridge` is the default, so specifying it here as shown is not
+        strictly required
+    - attach new container by specifying the `--network NAME` flag
+      - e.g., `docker container run --rm -d --network skynet alpine`
 
 ## MACVLAN
 
