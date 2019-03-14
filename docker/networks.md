@@ -33,6 +33,7 @@
 
 ## Overlay or "Multi-host Networking"
 
+- requires (TODO: confirm this) Swarm mode to function
 - single layer 2 network
 - span multiple hosts
 - IPs of specific backend Docker nodes are irrelevant
