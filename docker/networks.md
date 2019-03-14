@@ -1,5 +1,12 @@
 # Docker: Networks
 
+## Common commands
+
+- `docker network ls`
+- Inspect default bridge network (different name, different driver)
+  - Linux: `docker network inspect bridge`
+  - Windows: `docker network inspect nat`
+
 ## Bridge or "Single Host Networking"
 
 - known as `docker0`
@@ -11,6 +18,9 @@
 - "crappiest" per [Nigel Poulton](#references)
 - NAT
 - Requires port-mappings
+  - map port on the host to a port on a (specific) container
+  - e.g., `docker container run --rm -d --name web -p 8080:80 nginx`
+    - port 8080 on host to port 80 in container
 
 ## Overlay or "Multi-host Networking"
 
