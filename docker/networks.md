@@ -7,6 +7,7 @@
 - turned on by default
 - "crappiest" per Nigel Poulton
 - known as `docker0`
+- NAT
 
 ## References
 
