@@ -55,6 +55,11 @@
     - attach new container by specifying the `--network NAME` flag
       - e.g., `docker container run --rm -d --network skynet alpine`
 
+- Create new service on `overlay` network
+  - `docker service create -d --name example --replicas 2 --network skynet alpine`
+    - Note: Because they're on the same overlay network, the two replicas
+      (containers) can ping each other
+
 ## MACVLAN
 
 - used to have containers talk to systems on existing VLANs
