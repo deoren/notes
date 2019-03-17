@@ -74,12 +74,28 @@
 - containers can be visible on network as any other device
 - no bridges
 - no port mapping
+- cannot connect directly to parent interface
+  - Linux kernel filters out traffic between the container and the parent interface
 - requires `promiscuous mode` on the host NIC
   - cloud providers generally do not allow `promiscuous mode`
 - potential to exceed the number of allowed MAC Addresses, causing performance
   to drop considerably
+- When you provide the address space for the VLAN it relates to, make sure to
+  give a range of addresses that are not already in use on the VLAN or are not
+  in a pool of addresses that a DHCP server will hand out. If you are not
+  careful, using MACVLAN will result in duplicate IPs on the network.
 
-## IP
+## IPVLAN
+
+- similar to Linux MACVLAN
+- no bridges
+- subinterfaces
+- unique IP Address per container
+- shares MAC Address with host
+- requires special considerations when using DHCP
+  - DHCP servers expect to deal with MAC Addresses
+- cannot connect directly to parent interface
+  - Linux kernel filters out traffic between the container and the parent interface
 
 ## References
 
