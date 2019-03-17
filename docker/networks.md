@@ -60,6 +60,12 @@
     - Note: Because they're on the same overlay network, the two replicas
       (containers) can ping each other
 
+- New overlay networks are not immediately created on other nodes until needed
+  by a container running on one of those other swarm nodes
+  1. Create overlay network on `node1` of a multi-host swarm
+  1. Run `docker network ls` on `node1`, see the network
+  1. Run `docker network ls` on `node2`, do NOT see the network
+
 ## MACVLAN
 
 - used to have containers talk to systems on existing VLANs
