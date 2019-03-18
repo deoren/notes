@@ -12,6 +12,9 @@
   - [Create container](#create-container)
   - [Start container](#start-container)
   - [Create AND Start container](#create-and-start-container)
+  - [Login to container](#login-to-container)
+    - [as `ubuntu` user account](#as-ubuntu-user-account)
+    - [as root account](#as-root-account)
   - [Stop container](#stop-container)
   - [Delete container](#delete-container)
   - [References](#references)
@@ -118,6 +121,17 @@ Output:
 
 `lxc launch images:centos/7 centos-test`
 
+## Login to container
+
+### as `ubuntu` user account
+
+`lxc exec <container-name> -- sudo --login --user <username>`
+
+### as root account
+
+- `lxc exec <container-name> -- /bin/bash`
+- `lxc exec <container-name> -- sudo /bin/bash`
+
 ## Stop container
 
 `lxc stop centos-test`
@@ -138,3 +152,5 @@ To play it safe, you probably should one of these commands instead for interacti
 - [How to create a LXD Container with your ssh key in it (and with ssh server in the container)](https://gist.github.com/jeanlouisferey/15be1f421eb9f9a66f1c74d410de2675)
 
 - [LXD, ZFS and bridged networking on Ubuntu 16.04 LTS+](https://bayton.org/docs/linux/lxd/lxd-zfs-and-bridged-networking-on-ubuntu-16-04-lts/)
+
+- <https://askubuntu.com/questions/381099/how-to-log-into-lxc-container>
