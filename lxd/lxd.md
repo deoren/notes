@@ -17,7 +17,6 @@
     - [as root account](#as-root-account)
   - [Stop container](#stop-container)
   - [Create image from container](#create-image-from-container)
-    - [Optional](#optional)
   - [Delete container](#delete-container)
   - [References](#references)
 
@@ -140,16 +139,22 @@ Output:
 
 ## Create image from container
 
-1. `lxc stop <container-name>`
-1. `lxc publish --public <container-name> --alias=custom-build-tools-v1`
+1. Stop the container
+    - `lxc stop <container-name>`
+1. Publish the container
+    - Public image
+        - `lxc publish --public <container-name> --alias=custom-build-tools-v1`
+    - Private image
+      - `lxc publish <container-name> --alias=custom-build-tools-v1`
+1. Optional: Push image over to shared LXD server (as backup or for sharing)
+   - `lxc image copy <container-alias> <remote-name>:`
 
-The `--public` flag allows the image to be retrieved by remote clients?
+Notes:
 
-### Optional
-
-Push image over to shared LXD server for others to use (or as a backup):
-
-- `lxc image copy <container-alias> <remote-name>:`
+- The `--public` flag allows the image to be retrieved by any client that can
+  reach the LXD server where the image was first published or at
+  `<remote-name>:`
+- Omitting `--public` causes the container to be published as a private image.
 
 ## Delete container
 
