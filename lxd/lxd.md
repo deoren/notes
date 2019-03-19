@@ -169,5 +169,5 @@ To play it safe, you probably should one of these commands instead for interacti
 - [LXD, ZFS and bridged networking on Ubuntu 16.04 LTS+](https://bayton.org/docs/linux/lxd/lxd-zfs-and-bridged-networking-on-ubuntu-16-04-lts/)
 
 - <https://askubuntu.com/questions/381099/how-to-log-into-lxc-container>
-
+- <https://askubuntu.com/questions/1052643/lxd-how-to-execute-a-script-inside-a-container-from-host>
 - <https://blog.ubuntu.com/2015/06/30/publishing-lxd-images>
