@@ -16,6 +16,8 @@
     - [as `ubuntu` user account](#as-ubuntu-user-account)
     - [as root account](#as-root-account)
   - [Stop container](#stop-container)
+  - [Create image from container](#create-image-from-container)
+    - [Optional](#optional)
   - [Delete container](#delete-container)
   - [References](#references)
 
@@ -136,6 +138,19 @@ Output:
 
 `lxc stop centos-test`
 
+## Create image from container
+
+1. `lxc stop <container-name>`
+1. `lxc publish --public <container-name> --alias=custom-build-tools-v1`
+
+The `--public` flag allows the image to be retrieved by remote clients?
+
+### Optional
+
+Push image over to shared LXD server for others to use (or as a backup):
+
+- `lxc image copy <container-alias> <remote-name>:`
+
 ## Delete container
 
 **WARNING:**: You are NOT prompted to confirm you wish to delete the container.
@@ -154,3 +169,5 @@ To play it safe, you probably should one of these commands instead for interacti
 - [LXD, ZFS and bridged networking on Ubuntu 16.04 LTS+](https://bayton.org/docs/linux/lxd/lxd-zfs-and-bridged-networking-on-ubuntu-16-04-lts/)
 
 - <https://askubuntu.com/questions/381099/how-to-log-into-lxc-container>
+
+- <https://blog.ubuntu.com/2015/06/30/publishing-lxd-images>
