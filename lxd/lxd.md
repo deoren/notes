@@ -158,7 +158,7 @@ Notes:
 
 ## Delete container
 
-**WARNING:**: You are NOT prompted to confirm you wish to delete the container.
+**WARNING:** You are NOT prompted to confirm you wish to delete the container.
 
 `lxc delete centos-test`
 
