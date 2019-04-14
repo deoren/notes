@@ -12,6 +12,8 @@
       - [At build time](#at-build-time)
     - [After building an image](#after-building-an-image)
     - [Bypassing the cache / Forcing a clean image build](#bypassing-the-cache--forcing-a-clean-image-build)
+  - [Dockerfile](#dockerfile)
+    - [ENV vs ARG](#env-vs-arg)
   - [Running Docker image](#running-docker-image)
     - [Interactive](#interactive)
     - [Background / daemon / one-shot](#background--daemon--one-shot)
@@ -84,6 +86,24 @@ was given the hash/id of `62f030936d95`*
 ### Bypassing the cache / Forcing a clean image build
 
 1. `docker build --no-cache -t TAG_NAME_HERE -f DOCKERFILE_HERE .`
+
+## Dockerfile
+
+### ENV vs ARG
+
+- `ENV` instruction: baked into image
+- `ARG` instruction: only set at build time
+  - i.e., this is MUCH less likely to confuse someone later
+
+A good example is setting:
+
+```Dockerfile
+ENV DEBIAN_FRONTEND noninteractive
+```
+
+The end result is that further `apt` operations are silent and any images that
+use this one as the parent will also be subject to the same setting being
+applied there as well.
 
 ## Running Docker image
 
