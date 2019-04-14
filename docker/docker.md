@@ -107,6 +107,17 @@ The end result is that further `apt` operations are silent and any images that
 use this one as the parent will also be subject to the same setting being
 applied there as well.
 
+### ARG
+
+To pass an argument into a build, you must first define the variable's name.
+This is accomplished by using the `ARG` instruction. When defining the
+variable, you may also supply a default value which can be overidden later
+when using the `docker build` command:
+
+`docker build --build-arg FAVORITE_DESSERT=sleep .`
+
+Note: A change to the `ARG` will force the layers below to be rebuilt.
+
 ## Running Docker image
 
 ### Interactive
@@ -169,3 +180,5 @@ $ ​​docker​​ ​​volume​​ ​​inspect​​ ​​--format​​
 - <https://stackoverflow.com/questions/21928780/create-multiple-tag-docker-image>
 - <https://stackoverflow.com/questions/43754095/how-to-join-the-default-bridge-network-with-docker-compose-v2>
 - <https://stackoverflow.com/questions/35594987/how-to-force-docker-for-a-clean-build-of-an-image>
+
+- <https://www.manning.com/livevideo/docker-in-motion>
