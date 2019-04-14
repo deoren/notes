@@ -18,6 +18,7 @@
   - [Pushing docker image to registry](#pushing-docker-image-to-registry)
   - [Docker Compose](#docker-compose)
     - [Join container to default bridge network](#join-container-to-default-bridge-network)
+    - [Forcibly recreate a container](#forcibly-recreate-a-container)
   - [References](#references)
 
 ## Installation
@@ -121,6 +122,15 @@ services:
   app:
     image: ubuntu:latest
     network_mode: bridge
+```
+
+### Forcibly recreate a container
+
+This is useful in case settings have changed and the container needs to be
+recreated to use the settings.
+
+```yaml
+docker-compose​​ ​​up​​ ​​-d​​ ​​--force-recreate​​ SERVICE_NAME_HERE
 ```
 
 ## References
