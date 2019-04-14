@@ -21,6 +21,8 @@
   - [Docker Compose](#docker-compose)
     - [Join container to default bridge network](#join-container-to-default-bridge-network)
     - [Forcibly recreate a container](#forcibly-recreate-a-container)
+  - [Docker Volumes](#docker-volumes)
+    - [Inspect mountpoints](#inspect-mountpoints)
   - [References](#references)
 
 ## Installation
@@ -151,6 +153,14 @@ recreated to use the settings.
 
 ```yaml
 docker-compose​​ ​​up​​ ​​-d​​ ​​--force-recreate​​ SERVICE_NAME_HERE
+```
+
+## Docker Volumes
+
+### Inspect mountpoints
+
+```
+$ ​​docker​​ ​​volume​​ ​​inspect​​ ​​--format​​ ​​'{{ .Mountpoint }}'​​ ​​myapp_db_data
 ```
 
 ## References
