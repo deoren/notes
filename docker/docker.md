@@ -75,7 +75,7 @@ Note: The upstream Ubuntu repo packages already create the `docker` group.
 - `docker build -t name1:tag1 -t name1:tag2 -t name2 .`
 - `docker build --no-cache -t squid:3.5.27-1ubuntu1.1 -t squid:3.5.27 -t squid:latest .`
 
-### After building an image
+#### After building an image
 
 *Context: The original image was built with just the `squid:latest` tag and
 was given the hash/id of `62f030936d95`*
