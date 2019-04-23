@@ -1,23 +1,52 @@
 # Linux - Misc notes for various distros that I use
 
+## Table of contents
+
+- [Linux - Misc notes for various distros that I use](#linux---misc-notes-for-various-distros-that-i-use)
+  - [Table of contents](#table-of-contents)
+  - [systemd](#systemd)
+    - [journalctl](#journalctl)
+      - [Show kernel log messages with an ERROR priority](#show-kernel-log-messages-with-an-error-priority)
+      - [Show log messages with an INFO priority since the last boot](#show-log-messages-with-an-info-priority-since-the-last-boot)
+      - [Show ALL log messages between a time range](#show-all-log-messages-between-a-time-range)
+      - [Force time (shown in local time by default) to be displayed in UTC](#force-time-shown-in-local-time-by-default-to-be-displayed-in-utc)
+      - [List messages for a specific systemd unit (e.g., `rsyslog`)](#list-messages-for-a-specific-systemd-unit-eg-rsyslog)
+      - ["Tail" messages for a specific systemd unit (e.g., `rsyslog`)](#%22tail%22-messages-for-a-specific-systemd-unit-eg-rsyslog)
+      - [Show messages from most recent boot](#show-messages-from-most-recent-boot)
+  - [Ubuntu](#ubuntu)
+    - [Environment variables](#environment-variables)
+  - [References](#references)
+
 ## systemd
 
 ### journalctl
 
-- Show kernel log messages with an ERROR priority
-  - `sudo journalctl -p err -k`
-- Show log messages with an INFO priority since the last boot
-  - `sudo journalctl -p info -b`
-- Show ALL log messages between a time range
-  - `sudo journalctl --since "2018-07-15 15:00:00" --until "2018-07-15 16:00:00"`
-  - The `--since` and `--until` options can be used together (as shown here)
+#### Show kernel log messages with an ERROR priority
+
+`sudo journalctl -p err -k`
+
+#### Show log messages with an INFO priority since the last boot
+
+`sudo journalctl -p info -b`
+
+#### Show ALL log messages between a time range
+
+ `sudo journalctl --since "2018-07-15 15:00:00" --until "2018-07-15 16:00:00"`
+
+The `--since` and `--until` options can be used together (as shown here)
       or separately as needed for the desired effect.
-- Force time (shown in local time by default) to be displayed in UTC
-  - `sudo journalctl --utc`
-- List messages for a specific systemd unit (e.g., `rsyslog`)
-  - `sudo journalctl -u rsyslog.service`
-- "Tail" messages for a specific systemd unit (e.g., `rsyslog`)
-  - `sudo journalctl -f -u rsyslog.service`
+
+#### Force time (shown in local time by default) to be displayed in UTC
+
+`sudo journalctl --utc`
+
+#### List messages for a specific systemd unit (e.g., `rsyslog`)
+
+`sudo journalctl -u rsyslog.service`
+
+#### "Tail" messages for a specific systemd unit (e.g., `rsyslog`)
+
+`sudo journalctl -f -u rsyslog.service`
 
 #### Show messages from most recent boot
 
