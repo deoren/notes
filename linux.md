@@ -5,6 +5,7 @@
 - [Linux - Misc notes for various distros that I use](#linux---misc-notes-for-various-distros-that-i-use)
   - [Table of contents](#table-of-contents)
   - [systemd](#systemd)
+  - [systemd-analyze](#systemd-analyze)
     - [unit files](#unit-files)
       - [override unit file](#override-unit-file)
       - [revert unit file overrides](#revert-unit-file-overrides)
@@ -21,6 +22,31 @@
   - [References](#references)
 
 ## systemd
+
+## systemd-analyze
+
+This tool can be used to display the startup time for various units. This
+information helps to pinpoint delays in the startup process.
+
+From the manual page:
+
+This command prints a tree of the time-critical chain of units (for each of
+the specified UNITs or for the default target otherwise). The time after the
+unit is active or started is printed after the "@" character. The time the
+unit takes to start is printed after the "+" character. Note that the output
+might be misleading as the initialization of services might depend on socket
+activation and because of the parallel execution of units.
+
+Examples:
+
+- `sudo systemd-analyze critical-chain`
+  - overall causes of boot delay
+
+- `sudo systemd-analyze critical-chain rsyslog.service`
+  - display "critical-chain" for specific unit
+
+- `sudo systemd-analyze critical-chain rsyslog.service docker.service`
+  - display "critical-chain" for specific **units**
 
 ### unit files
 
@@ -98,3 +124,4 @@ Everything:
 - <https://askubuntu.com/questions/995711/where-can-i-find-the-boot-log>
 - <https://unix.stackexchange.com/questions/398540/how-to-override-systemd-unit-file-settings>
 - <https://unix.stackexchange.com/questions/449051/systemd-delete-overrides>
+- <https://www.freedesktop.org/software/systemd/man/systemd-analyze.html>
