@@ -19,6 +19,16 @@
 - "Tail" messages for a specific systemd unit (e.g., `rsyslog`)
   - `sudo journalctl -f -u rsyslog.service`
 
+#### Show messages from most recent boot
+
+Specific service:
+
+`sudo journalctl -b -u nginx.service`
+
+Everything:
+
+`sudo journalctl -b`
+
 ## Ubuntu
 
 ### Environment variables
@@ -30,3 +40,4 @@
 ## References
 
 - [Pro Linux System Administration](https://www.apress.com/us/book/9781484220078)
+- <https://askubuntu.com/questions/995711/where-can-i-find-the-boot-log>
