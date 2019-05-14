@@ -2,6 +2,19 @@
 
 ## Variables
 
+### Memory allocation
+
+#### `new()` function
+
+- Allocates, but does not initialize memory
+- Results in zeroed storage, but returns a memory address
+
+#### `make()` function
+
+- Allocates **and** initializes memory
+- Allocates non-zeroed storage and returns a memory address
+- Recommended over `new()` except for very specific use cases
+
 ### Declaring
 
 - Go encourages not predeclaring variables, instead, declaring them within
@@ -166,3 +179,6 @@ The example of where this feature is particularly useful is when working with JS
     - https://stackoverflow.com/a/24493004
     - https://stackoverflow.com/a/30135334
     - https://golang.org/doc/effective_go.html#interface_conversions
+
+- Learning Go
+  - <https://www.lynda.com/Go-tutorials/Up-Running-Go/412378-2.html>
