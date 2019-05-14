@@ -62,6 +62,9 @@ preferred approach.
 
 - maps can map from pretty much any type where equality is defined
 
+- It is common to use strings for keys and then any other type for the
+  associated values
+
 ## Scope
 
 ### Example: What you might expect
