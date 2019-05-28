@@ -10,10 +10,12 @@
     - [Example](#example)
     - [Specifying multiple tags](#specifying-multiple-tags)
       - [At build time](#at-build-time)
-    - [After building an image](#after-building-an-image)
+      - [After building an image](#after-building-an-image)
     - [Bypassing the cache / Forcing a clean image build](#bypassing-the-cache--forcing-a-clean-image-build)
   - [Dockerfile](#dockerfile)
     - [ENV vs ARG](#env-vs-arg)
+    - [ARG](#arg)
+    - [VOLUME](#volume)
   - [Running Docker image](#running-docker-image)
     - [Interactive](#interactive)
     - [Background / daemon / one-shot](#background--daemon--one-shot)
@@ -118,6 +120,10 @@ when using the `docker build` command:
 
 Note: A change to the `ARG` will force the layers below to be rebuilt.
 
+### VOLUME
+
+For now, see [StackOverflow.com question 41935435](#References).
+
 ## Running Docker image
 
 ### Interactive
@@ -180,5 +186,7 @@ $ ​​docker​​ ​​volume​​ ​​inspect​​ ​​--format​​
 - <https://stackoverflow.com/questions/21928780/create-multiple-tag-docker-image>
 - <https://stackoverflow.com/questions/43754095/how-to-join-the-default-bridge-network-with-docker-compose-v2>
 - <https://stackoverflow.com/questions/35594987/how-to-force-docker-for-a-clean-build-of-an-image>
+- <https://stackoverflow.com/questions/41935435/understanding-volume-instruction-in-dockerfile>
+
 
 - <https://www.manning.com/livevideo/docker-in-motion>
