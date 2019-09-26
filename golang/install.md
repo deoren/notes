@@ -46,6 +46,15 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 1. `sudo apt-get update`
 1. `sudo apt-get install golang-go`
 
+If you later decide that you wish to use the binaries directly from Google
+and extract the tarball yourself, you can remove the packages and the PPA via
+these commands:
+
+1. `sudo apt-get remove --purge $(dpkg -l | grep longsleep | awk '{print $2}')`
+1. `sudo apt-add-repository --remove ppa:longsleep/golang-backports`
+
+You should be prompted for confirmation when running both commands.
+
 #### Custom Deb package
 
 1. `mkdir -p ~/.go/bin`
