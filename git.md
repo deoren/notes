@@ -13,6 +13,7 @@
   - [Display changes](#display-changes)
     - [Diff for specific commit](#diff-for-specific-commit)
     - [Diff for last commit](#diff-for-last-commit)
+    - [Files modified](#files-modified)
   - [Log display options](#log-display-options)
   - [Display configured remote](#display-configured-remote)
   - [Change configured remote](#change-configured-remote)
@@ -81,6 +82,11 @@
 ### Diff for last commit
 
 - `git show HEAD~1`
+
+### Files modified
+
+- `git show --name-only COMMIT`
+- `git diff-tree --no-commit-id --name-only -r COMMIT`
 
 ## Log display options
 
