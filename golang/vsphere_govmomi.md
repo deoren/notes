@@ -1,4 +1,19 @@
+<!-- omit in toc -->
 # vSphere / govmomi
+
+<!-- omit in toc -->
+## Table of contents
+
+- [About](#about)
+- [Types](#types)
+- [page 28](#page-28)
+- [page 64](#page-64)
+- [page 65](#page-65)
+- [page 67](#page-67)
+- [page 75](#page-75)
+- [page 81](#page-81)
+- [page 91](#page-91)
+- [page 92](#page-92)
 
 ## About
 
@@ -46,12 +61,12 @@ vSphere Data objects can include properties that are defined as composite data
 types, such as data objects. The embedded data objects can also contain
 properties that are data objects. Properties can nest to several levels.
 
-page 28
+## page 28
 
 If you retrieve a data object that has an optional property that is unset, the
 Server will not return a value for the optional property.
 
-page 64
+## page 64
 
 The PropertyCollector service interface provides a way to monitor and retrieve
 information about managed objects, such as whether a virtual machine is
@@ -65,7 +80,7 @@ objects that specify the following information:
 - Inventory traversal path.
 - Objects and properties from which data will be collected.
 
-page 65
+## page 65
 
 A vSphere server creates a default PropertyCollector for every session, and
 allows you to create multiple, additional PropertyCollector objects. Create
@@ -99,7 +114,7 @@ if err != nil {
 **A best practice when using views is to call the DestroyView() method when a
 view is no longer needed. This practice frees memory on the server.**
 
-page 67
+## page 67
 
 To do a single retrieval operation with the PropertyCollector, use the
 following steps:
@@ -144,7 +159,7 @@ following steps:
   }
 ```
 
-page 75
+## page 75
 
 During inventory traversal, the PropertyCollector applies the PropertySpec
 object or objects (PropertyFilterSpec.propSet) to objects. Inventory traversal
@@ -162,4 +177,58 @@ VirtualMachine objects in the view list. The figure also shows the
 PropertySpec objects for collecting data from VirtualMachine, Network, and
 ResourcePool objects.
 
-*my notes*: <https://code.vmware.com/apis/968>
+*my notes*: <https://code.vmware.com/apis/968> (I forgot where I was going with this)
+
+## page 81
+
+```Java
+// Variables of the following types for access to the API methods
+// and to the vSphere inventory.
+// -- ManagedObjectReference for the ServiceInstance on the Server
+// -- VimService for access to the vSphere Web service
+// -- VimPortType for access to methods
+// -- ServiceContent for access to managed object services
+ManagedObjectReference SVC_INST_REF = new ManagedObjectReference();
+VimService vimService;
+VimPortType vimPort;
+ServiceContent serviceContent;
+```
+
+## page 91
+
+PropertyCollector Performance
+
+These factors can affect the performance of a PropertyCollector for any given
+session:
+
+- Number of objects
+- Number of properties
+- Density of property data (composite, nested data objects)
+- Frequency of changes to the objects and properties on the server
+- Depth of traversal (number of properties traversed)
+
+In addition, a vSphere server is affected by the number of PropertyCollector
+instances and the number of filters each instance is supporting across all
+sessions on the server.
+
+*To minimize PropertyCollector overhead and the amount of network traffic for
+your client application, use View objects with the PropertyCollector.*
+
+## page 92
+
+SearchIndex
+
+The SearchIndex managed object provides a set of methods to retrieve
+references to managed objects in the vSphere inventory. You can search by
+managed objects inventory path, IP address, datastore path, DNS name, and
+various other identifying attributes.
+
+For example, if you know the IP address of a virtual machine, you can obtain
+its managed object reference by using the SearchIndex.FindByIp method. You can
+use SearchIndex to obtain the reference to a server object, and then use that
+reference as the starting object for property collection.
+
+- See the sample applications SearchIndex.java and SearchIndex.cs for more
+  information about using SearchIndex.
+- See the vSphere API Reference for more information about SearchIndex
+  methods.
