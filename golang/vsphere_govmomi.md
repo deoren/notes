@@ -101,6 +101,16 @@ type ManagedObjectReference struct {
 }
 ```
 
+<https://github.com/vmware/govmomi/blob/v0.24.0/vim25/types/helpers.go#L50>
+
+```golang
+func (r ManagedObjectReference) String() string {
+    return strings.Join([]string{r.Type, r.Value}, ":")
+}
+```
+
+The `Value` is the id of the reference.
+
 ### View objects
 
 > Use a view to specify a set of objects that the PropertyCollector can use
