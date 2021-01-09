@@ -65,7 +65,11 @@ server with its type and a value.**
     > Common contains the fields and functions common to all objects.
 
 - `mo.ManagedEntity`
-  - ?
+  - an abstract base type for all managed objects present in the inventory
+    tree. The base type provides common functionality for traversing the tree
+    structure, as well as health monitoring and other basic functions. Most
+    Virtual Infrastructure managed object types extend this type.
+    <https://vdc-download.vmware.com/vmwb-repository/dcr-public/a5f4000f-1ea8-48a9-9221-586adff3c557/7ff50256-2cf2-45ea-aacd-87d231ab1ac7/vim.ManagedEntity.html>
 
 - `(*Client).PropertyCollector`
   - session's default property collector
